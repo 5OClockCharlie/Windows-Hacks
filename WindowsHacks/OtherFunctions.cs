@@ -5,12 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsAPI;
+using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace WindowsHacks
 {
     class OtherFunctions
     {
 
+
+        [DllImport("user32.dll")]
+        public static extern int GetWindowLong(IntPtr hwnd, int index);
+        [DllImport("user32.dll")]
+        public static extern int SetWindowLong(IntPtr hwnd, int index, int newstyle);
         public static void ShakeMouse()
         {
             Random r = new Random();
@@ -58,7 +65,6 @@ namespace WindowsHacks
                 System.Threading.Thread.Sleep(10);
             }
         }
-
         public static void SetTitle()
         {
             string windowTitle = GetWindowTitle();
@@ -142,7 +148,7 @@ namespace WindowsHacks
             Window.DisableMinimizeButton(hWnd);
         }
 
-        static string GetWindowTitle()
+        public static string GetWindowTitle()
         {
             Console.Write("Insert Window Title: ");
             string windowTitle = Console.ReadLine();

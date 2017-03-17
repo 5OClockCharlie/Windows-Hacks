@@ -24,7 +24,7 @@ namespace WindowsHacks
         {
             list = new List<Bitmap>();
 
-            string windowTitle = GetWindowTitle();
+            string windowTitle = OtherFunctions.GetWindowTitle();
             IntPtr hWnd = Window.Get(windowTitle);
 
             Window.Normalize(hWnd);
@@ -51,19 +51,7 @@ namespace WindowsHacks
         /// Allow the user to select a window.
         /// </summary>
         /// <returns>True if a window with the specified title is found.</returns>
-        private static string GetWindowTitle()
-        {
-            Console.Write("Insert Window Title: ");
-            string windowTitle = Console.ReadLine();
 
-            if (!Window.DoesExist(windowTitle))
-            {
-                Console.WriteLine("Window not found.");
-                return GetWindowTitle();
-            }
-
-            return windowTitle;
-        }
 
         /// <summary>
         /// Shift the hue of the pixels in an image.

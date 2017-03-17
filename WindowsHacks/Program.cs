@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace WindowsHacks
 {
@@ -46,6 +47,7 @@ namespace WindowsHacks
                 else if (input == 28) DesktopArt.Run();
                 else if (input == 29) WindowsAPI.Desktop.HideTaskBar();
                 else if (input == 30) WindowsAPI.Desktop.ShowTaskBar();
+                else if (input == 31) VerticalMirror.Run();
                 else if (input == 0) break;
             }
         }
@@ -71,7 +73,7 @@ namespace WindowsHacks
             Console.WriteLine("------------------------------MISCELLANEOUS------------------------------");
             Console.WriteLine("25. Painter                                  29. Hide Taskbar");
             Console.WriteLine("26. Motion Detector                          30. Show Taskbar");
-            Console.WriteLine("27. Ripple Effect");
+            Console.WriteLine("27. Ripple Effect                            31. Flip Right");
             Console.WriteLine("28. Desktop Art                               0. Quit");
             Console.WriteLine("-------------------------------------------------------------------------");
         }
