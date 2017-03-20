@@ -18,8 +18,7 @@ namespace WindowsHacks
 
         public static void Run()
         {
-            string windowTitle = OtherFunctions.GetWindowTitle();
-            hWnd = Window.Get(windowTitle);
+            IntPtr hWnd = OtherFunctions.GetWindowHandlePtr();
             blankBitmap = ImageProcessing.Tools.BlankBitmap(Window.GetSize(hWnd).Width, Window.GetSize(hWnd).Height * 2);
             
             for (int x = 0; x < blankBitmap.Width; x++)

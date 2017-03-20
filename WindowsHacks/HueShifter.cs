@@ -24,8 +24,7 @@ namespace WindowsHacks
         {
             list = new List<Bitmap>();
 
-            string windowTitle = OtherFunctions.GetWindowTitle();
-            IntPtr hWnd = Window.Get(windowTitle);
+            IntPtr hWnd = OtherFunctions.GetWindowHandlePtr();
 
             Window.Normalize(hWnd);
             Window.SetFocused(hWnd);

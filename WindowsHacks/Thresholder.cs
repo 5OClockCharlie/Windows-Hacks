@@ -16,8 +16,7 @@ namespace WindowsHacks
         {
             if (thresholds < 1 || thresholds > 255) throw new Exception("Threshold must be 1-255.");
 
-            string windowTitle = OtherFunctions.GetWindowTitle();
-            IntPtr hWnd = Window.Get(windowTitle);
+            IntPtr hWnd = OtherFunctions.GetWindowHandlePtr();
 
             System.Threading.Thread.Sleep(100);
             Window.SetFocused(hWnd);

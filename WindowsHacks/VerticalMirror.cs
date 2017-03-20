@@ -11,8 +11,7 @@ namespace WindowsHacks
         private static int extendedStyle = 0;
         public static void Run()
         {
-            string windowTitle = OtherFunctions.GetWindowTitle();
-            IntPtr hWnd = Window.Get(windowTitle);
+            IntPtr hWnd = OtherFunctions.GetWindowHandlePtr();
             FlipLeft(hWnd);
             Console.ReadLine();
             FlipRight(hWnd);

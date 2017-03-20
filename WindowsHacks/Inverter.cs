@@ -14,8 +14,7 @@ namespace WindowsHacks
     {
         public static void Run()
         {
-            string input = OtherFunctions.GetWindowTitle();
-            IntPtr hWnd = Window.Get(input);
+            IntPtr hWnd = OtherFunctions.GetWindowHandlePtr();
 
             Window.Normalize(hWnd);
             Window.SetFocused(hWnd);
